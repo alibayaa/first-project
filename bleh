@@ -1,0 +1,27 @@
+todo_list = []
+
+
+def menu():
+    print("Your To Do List")
+    print("1. Add a task")
+    print("2. View tasks")
+    print("3. Complete a task")
+    print("4. Delete a task")
+    print("5. Exit")
+
+
+choice = input("Enter your choice: ")
+
+
+def add():
+    task = input("Enter the task to add: ")
+    todo_list.append(task)
+
+
+def view():
+    print(todo_list)
+
+
+def delete():
+    x = input("What would you like to delete?: ")
+    todo_list.remove(x)
