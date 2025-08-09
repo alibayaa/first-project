@@ -12,17 +12,16 @@ def menu():
 
 print(menu())
 
-choice = input("Enter your choice: ")
-
 
 def add():
     task = input("Enter the task to add: ")
+    print(f"Adding {task} to the list.")
     todo_list.append(task)
 
 
 def view():
     if todo_list == []:
-        print("List is emppty.")
+        print("List is empty.")
     else:
         print(todo_list)
 
@@ -30,28 +29,39 @@ def view():
 def delete():
     x = input("What would you like to delete?: ")
     if x in todo_list:
+        print(f"Deleting {x} from the list.")
         todo_list.remove(x)
+
     else:
         print("Task not found")
 
 
 def complete():
     x = input("Which task is completed?: ")
+    print(f"Congratulations on completing the following task!: {x}")
     todo_list.remove(x)
-    print("Congratulations!")
 
 
 def exit():
     print("Bye Bye!")
 
 
-if choice == "1":
-    add()
-elif choice == "2":
-    view()
-elif choice == "3":
-    complete()
-elif choice == "4":
-    delete()
-elif choice == "5":
-    exit()
+while True:
+    try:
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            add()
+        elif choice == "2":
+            view()
+        elif choice == "3":
+            complete()
+        elif choice == "4":
+            delete()
+        elif choice == "5":
+            exit()
+        else:
+            print("Invalid choice. Please try again.")
+    except:
+        print("Error, try again.")
