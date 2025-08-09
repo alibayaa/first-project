@@ -38,8 +38,11 @@ def delete():
 
 def complete():
     x = input("Which task is completed?: ")
-    print(f"Congratulations on completing the following task!: {x}")
-    todo_list.remove(x)
+    if x in todo_list:
+        print(f"Congratulations on completing the following task!: {x}")
+        todo_list.remove(x)
+    else:
+        print("Task not found")
 
 
 def exit():
